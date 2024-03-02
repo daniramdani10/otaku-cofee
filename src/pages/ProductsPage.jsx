@@ -39,7 +39,7 @@ const ProductsPage = () => {
         </Button>
       </div>
       <div className="flex">
-        <div className="flex gap-3 mx-10 my-5 w-4/6">
+        <div className="flex gap-3 mx-10 my-5 w-4/6 flex-wrap">
           {products.map((product) => (
             <CardProduct key={product.id}>
               <CardProduct.Header image={product.image} alt={product.title} />

@@ -31,8 +31,8 @@ const TableCart = (props) => {
       <thead>
         <tr>
           <th>Product</th>
-          <th>Quantity</th>
           <th>Price</th>
+          <th>Quantity</th>
           <th>Total</th>
         </tr>
       </thead>
@@ -43,20 +43,10 @@ const TableCart = (props) => {
             return (
               <tr key={item.id}>
                 <td>{product.title.substring(0, 20)}...</td>
-                <td>
-                  ${" "}
-                  {product.price.toLocaleString("en-US", {
-                    styles: "curency",
-                    curency: "USD",
-                  })}
-                </td>
+                <td>Rp. {product.price.toLocaleString("id-ID")}</td>
                 <td>{item.qty}</td>
                 <td>
-                  ${" "}
-                  {(product.price * item.qty).toLocaleString("en-US", {
-                    styles: "curency",
-                    curency: "USD",
-                  })}
+                  Rp. {(product.price * item.qty).toLocaleString("id-ID")}
                 </td>
               </tr>
             );
@@ -66,13 +56,7 @@ const TableCart = (props) => {
             <b>Total Price</b>
           </td>
           <td>
-            <b>
-              {"$ " +
-                totalPrice.toLocaleString("en-US", {
-                  styles: "curency",
-                  curency: "USD",
-                })}
-            </b>
+            <b>{"Rp. " + totalPrice.toLocaleString("id-ID")}</b>
           </td>
         </tr>
       </tbody>
